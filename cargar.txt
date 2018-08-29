@@ -1,0 +1,9 @@
+crear almacen7
+insertar 00 15/48/78 Argentina Amcpa A A Joda 1000
+insertar 01 12/48/78 Brasik Amcpa b b Joda 1500
+insertar 02 18/48/78 Japon Tasn C A Joda 200
+guardar
+
+
+cargar almacen7
+consultar Joda == 1000
