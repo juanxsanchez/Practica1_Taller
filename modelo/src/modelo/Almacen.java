@@ -28,7 +28,8 @@ public class Almacen {
     }
     public Almacen(){};
     
-    public void insertar(String[] c) throws Error007 {
+    public void insertar(String[] c)
+    {
        //puede venir un dato XML que no exista
        String lineaXML=c[1];
        parserxml p=new parserxml();
@@ -49,7 +50,7 @@ public class Almacen {
             Analisis analisis=new Analisis(lista[0][2],lista[1][2],lista[2][2],lista[3][2],lista[4][2],lista[5][2],estudios);
             this.analisis.put(analisis.getId(), analisis);
             }
-                else{throw new Error007("ya existe el analisis a insertar");}
+                else{System.out.println("ya existe");}
             }
          catch (IOException | ParserConfigurationException | SAXException e) {
         }
@@ -169,7 +170,7 @@ public class Almacen {
                         {
                             if(c[4].equalsIgnoreCase("tofile"))
                             {
-                                this.serializarConsulta(consulta, c[4]);
+                                this.serializarConsulta(consulta, c[5]);
                             }
                             else
                                 throw new Error002("Consulta mal construida");
@@ -206,7 +207,7 @@ public class Almacen {
             XMLEncoder encoder=null;
             try
             {
-                encoder = new XMLEncoder(new BufferedOutputStream(new FileOutputStream(nombreArch)));
+                encoder = new XMLEncoder(new BufferedOutputStream(new FileOutputStream(nombreArch + ".xml")));
                
                 encoder.writeObject(s);
                 encoder.close();
