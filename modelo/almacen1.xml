@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_131" class="java.beans.XMLDecoder">
+ <object class="modelo.Almacen" id="Almacen0">
+  <void property="analisis">
+   <void method="put">
+    <string>0001</string>
+    <object class="modelo.Analisis" id="Analisis0">
+     <void property="apellido">
+      <string>Perez</string>
+     </void>
+     <void property="domicilio">
+      <string>Reconquista_5004</string>
+     </void>
+     <void property="estudios">
+      <void method="add">
+       <object class="modelo.Estudio">
+        <void property="tipo">
+         <string>Globulos_rojos</string>
+        </void>
+        <void property="valor">
+         <double>5000.0</double>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="modelo.Estudio">
+        <void property="tipo">
+         <string>Glucosa</string>
+        </void>
+        <void property="valor">
+         <double>500.0</double>
+        </void>
+       </object>
+      </void>
+     </void>
+     <void property="fecha">
+      <string>01-01-1990</string>
+     </void>
+     <void property="id">
+      <string>0001</string>
+     </void>
+     <void property="medico">
+      <string>Mateos</string>
+     </void>
+     <void property="nombre">
+      <string>Juan</string>
+     </void>
+    </object>
+   </void>
+  </void>
+  <void property="nombre">
+   <string>almacen1</string>
+  </void>
+ </object>
+</java>

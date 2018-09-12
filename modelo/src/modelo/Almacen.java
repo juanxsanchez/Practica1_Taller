@@ -28,8 +28,7 @@ public class Almacen {
     }
     public Almacen(){};
     
-    public void insertar(String[] c)
-    {
+    public void insertar(String[] c) throws Error007 {
        //puede venir un dato XML que no exista
        String lineaXML=c[1];
        parserxml p=new parserxml();
@@ -50,7 +49,7 @@ public class Almacen {
             Analisis analisis=new Analisis(lista[0][2],lista[1][2],lista[2][2],lista[3][2],lista[4][2],lista[5][2],estudios);
             this.analisis.put(analisis.getId(), analisis);
             }
-                else{System.out.println("ya existe");}
+                else{throw new Error007("Analisis ya existe");}
             }
          catch (IOException | ParserConfigurationException | SAXException e) {
         }

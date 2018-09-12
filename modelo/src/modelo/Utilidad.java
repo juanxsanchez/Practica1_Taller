@@ -66,8 +66,11 @@ public class Utilidad extends Observable{
             } catch (Error004 e) {
                 setChanged();
                 notifyObservers(new Notificacion(Utilidad.ERROR,e.getCartel()));
+            } catch (Error000 e) {
+                    setChanged();
+                    notifyObservers(new Notificacion(Utilidad.ERROR,e.getCartel()));
+                }
             }
-        }
         else{    
             if(comandoActual[0].equalsIgnoreCase(Utilidad.CONSULTAR))
                 {
@@ -147,7 +150,7 @@ public class Utilidad extends Observable{
     
     public void crearAlmacen(String[] c) throws Error000, Error004 {
         
-        if(c[1]!= null && c.length==2){
+        if(c.length==2 && c[1]!= null  ){
             if(!Utilidad.listaAlmacenes.getAlmacenes().contains(c[1]) || Utilidad.listaAlmacenes.getAlmacenes().isEmpty())
             {
                 this.almacen=new Almacen(c[1]);
@@ -167,7 +170,8 @@ public class Utilidad extends Observable{
         this.serializarAlmacen();
        
     }
-    public void cargar(String[] c) throws Error004 {
+    public void cargar(String[] c) throws Error004, Error000 {
+        if(c.length==2 && c[1]!= null  ){
         if(Utilidad.listaAlmacenes.getAlmacenes().contains(c[1])){
             try {
                 this.almacen = this.deserializarAlmacen(c[1]);
@@ -181,6 +185,8 @@ public class Utilidad extends Observable{
             {
                 throw new Error004("Operacion no realizable, no se encuentra el Almacen");
             }
+        }
+        else throw new Error000("Comando mal formado");
     }
     public void serializarAlmacen()
     {

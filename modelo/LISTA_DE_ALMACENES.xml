@@ -4,5 +4,11 @@
   <void method="add">
    <string>almacen</string>
   </void>
+  <void method="add">
+   <string>almacen1</string>
+  </void>
+  <void method="add">
+   <string>almacen1</string>
+  </void>
  </object>
 </java>
